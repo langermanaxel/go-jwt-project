@@ -31,7 +31,7 @@ func HashPassword(password string) string {
 }
 
 func VerifyPassword(user_password, provided_password string) (bool, string) {
-	err := bcrypt.CompareHashAndPassword([]byte(user_password), []byte(provided_password))
+	err := bcrypt.CompareHashAndPassword([]byte(provided_password), []byte(user_password))
 	check := true
 	msg := ""
 	if err != nil {
